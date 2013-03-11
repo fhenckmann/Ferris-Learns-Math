@@ -16,7 +16,6 @@
 		1F6093DE16E06AEC00B3861A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F6093DD16E06AEC00B3861A /* Default.png */; };
 		1F6093E016E06AEC00B3861A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F6093DF16E06AEC00B3861A /* Default@2x.png */; };
 		1F6093E216E06AEC00B3861A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F6093E116E06AEC00B3861A /* Default-568h@2x.png */; };
-		1F6093E516E06AEC00B3861A /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F6093E316E06AEC00B3861A /* MainStoryboard_iPhone.storyboard */; };
 		1F6093E816E06AEC00B3861A /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F6093E616E06AEC00B3861A /* MainStoryboard_iPad.storyboard */; };
 		1F6093EB16E06AEC00B3861A /* HetoeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6093EA16E06AEC00B3861A /* HetoeViewController.m */; };
 		1F6093F316E06AEC00B3861A /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F6093F216E06AEC00B3861A /* SenTestingKit.framework */; };
@@ -24,6 +23,27 @@
 		1F6093F516E06AEC00B3861A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F6093CD16E06AEC00B3861A /* Foundation.framework */; };
 		1F6093FD16E06AED00B3861A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1F6093FB16E06AED00B3861A /* InfoPlist.strings */; };
 		1F60940016E06AED00B3861A /* Ones_And_TensTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F6093FF16E06AED00B3861A /* Ones_And_TensTests.m */; };
+		1F60940B16E445F000B3861A /* HetoeGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F60940A16E445F000B3861A /* HetoeGridViewController.m */; };
+		1F60941816E45C3E00B3861A /* box_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F60940C16E45C3E00B3861A /* box_blue.png */; };
+		1F60941916E45C3E00B3861A /* box_blue_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F60940D16E45C3E00B3861A /* box_blue_disabled.png */; };
+		1F60941A16E45C3E00B3861A /* box_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F60940E16E45C3E00B3861A /* box_green.png */; };
+		1F60941B16E45C3E00B3861A /* box_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F60940F16E45C3E00B3861A /* box_white.png */; };
+		1F60941C16E45C3E00B3861A /* box_white_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F60941016E45C3E00B3861A /* box_white_disabled.png */; };
+		1F60941D16E45C3E00B3861A /* box_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F60941116E45C3E00B3861A /* box_yellow.png */; };
+		1F60941E16E45C3E00B3861A /* button_equals_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F60941216E45C3E00B3861A /* button_equals_active.png */; };
+		1F60941F16E45C3E00B3861A /* button_equals_inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F60941316E45C3E00B3861A /* button_equals_inactive.png */; };
+		1F60942016E45C3E00B3861A /* button_minus_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F60941416E45C3E00B3861A /* button_minus_active.png */; };
+		1F60942116E45C3E00B3861A /* button_minus_inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F60941516E45C3E00B3861A /* button_minus_inactive.png */; };
+		1F60942216E45C3E00B3861A /* button_plus_active.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F60941616E45C3E00B3861A /* button_plus_active.png */; };
+		1F60942316E45C3E00B3861A /* button_plus_inactive.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F60941716E45C3E00B3861A /* button_plus_inactive.png */; };
+		1F60942516E4C98200B3861A /* box_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F60942416E4C98200B3861A /* box_red.png */; };
+		1FA65FA116E9D7770063BFBB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FA65FA016E9D7770063BFBB /* AVFoundation.framework */; };
+		1FA65FA516E9E0CB0063BFBB /* sound_box.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1FA65FA216E9E0CB0063BFBB /* sound_box.wav */; };
+		1FA65FA616E9E0CB0063BFBB /* sound_error.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1FA65FA316E9E0CB0063BFBB /* sound_error.wav */; };
+		1FA65FA716E9E0CB0063BFBB /* sound_switch.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1FA65FA416E9E0CB0063BFBB /* sound_switch.wav */; };
+		1FA65FAA16E9F04A0063BFBB /* ferris_self_portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FA65FA816E9F04A0063BFBB /* ferris_self_portrait.png */; };
+		1FA65FAB16E9F04A0063BFBB /* ferris_learns_maths.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FA65FA916E9F04A0063BFBB /* ferris_learns_maths.png */; };
+		1FA65FAE16E9FC900063BFBB /* HetoeOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FA65FAD16E9FC900063BFBB /* HetoeOptionsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +70,6 @@
 		1F6093DD16E06AEC00B3861A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		1F6093DF16E06AEC00B3861A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		1F6093E116E06AEC00B3861A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		1F6093E416E06AEC00B3861A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		1F6093E716E06AEC00B3861A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		1F6093E916E06AEC00B3861A /* HetoeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HetoeViewController.h; sourceTree = "<group>"; };
 		1F6093EA16E06AEC00B3861A /* HetoeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HetoeViewController.m; sourceTree = "<group>"; };
@@ -60,6 +79,29 @@
 		1F6093FC16E06AED00B3861A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1F6093FE16E06AED00B3861A /* Ones_And_TensTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Ones_And_TensTests.h; sourceTree = "<group>"; };
 		1F6093FF16E06AED00B3861A /* Ones_And_TensTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Ones_And_TensTests.m; sourceTree = "<group>"; };
+		1F60940916E445F000B3861A /* HetoeGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HetoeGridViewController.h; sourceTree = "<group>"; };
+		1F60940A16E445F000B3861A /* HetoeGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HetoeGridViewController.m; sourceTree = "<group>"; };
+		1F60940C16E45C3E00B3861A /* box_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box_blue.png; sourceTree = "<group>"; };
+		1F60940D16E45C3E00B3861A /* box_blue_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box_blue_disabled.png; sourceTree = "<group>"; };
+		1F60940E16E45C3E00B3861A /* box_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box_green.png; sourceTree = "<group>"; };
+		1F60940F16E45C3E00B3861A /* box_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box_white.png; sourceTree = "<group>"; };
+		1F60941016E45C3E00B3861A /* box_white_disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box_white_disabled.png; sourceTree = "<group>"; };
+		1F60941116E45C3E00B3861A /* box_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box_yellow.png; sourceTree = "<group>"; };
+		1F60941216E45C3E00B3861A /* button_equals_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_equals_active.png; sourceTree = "<group>"; };
+		1F60941316E45C3E00B3861A /* button_equals_inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_equals_inactive.png; sourceTree = "<group>"; };
+		1F60941416E45C3E00B3861A /* button_minus_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_minus_active.png; sourceTree = "<group>"; };
+		1F60941516E45C3E00B3861A /* button_minus_inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_minus_inactive.png; sourceTree = "<group>"; };
+		1F60941616E45C3E00B3861A /* button_plus_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_plus_active.png; sourceTree = "<group>"; };
+		1F60941716E45C3E00B3861A /* button_plus_inactive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_plus_inactive.png; sourceTree = "<group>"; };
+		1F60942416E4C98200B3861A /* box_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box_red.png; sourceTree = "<group>"; };
+		1FA65FA016E9D7770063BFBB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1FA65FA216E9E0CB0063BFBB /* sound_box.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_box.wav; sourceTree = "<group>"; };
+		1FA65FA316E9E0CB0063BFBB /* sound_error.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_error.wav; sourceTree = "<group>"; };
+		1FA65FA416E9E0CB0063BFBB /* sound_switch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_switch.wav; sourceTree = "<group>"; };
+		1FA65FA816E9F04A0063BFBB /* ferris_self_portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ferris_self_portrait.png; sourceTree = "<group>"; };
+		1FA65FA916E9F04A0063BFBB /* ferris_learns_maths.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ferris_learns_maths.png; sourceTree = "<group>"; };
+		1FA65FAC16E9FC900063BFBB /* HetoeOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HetoeOptionsViewController.h; sourceTree = "<group>"; };
+		1FA65FAD16E9FC900063BFBB /* HetoeOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HetoeOptionsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FA65FA116E9D7770063BFBB /* AVFoundation.framework in Frameworks */,
 				1F6093CC16E06AEC00B3861A /* UIKit.framework in Frameworks */,
 				1F6093CE16E06AEC00B3861A /* Foundation.framework in Frameworks */,
 				1F6093D016E06AEC00B3861A /* CoreGraphics.framework in Frameworks */,
@@ -89,6 +132,7 @@
 		1F6093BF16E06AEC00B3861A = {
 			isa = PBXGroup;
 			children = (
+				1FA65FA016E9D7770063BFBB /* AVFoundation.framework */,
 				1F6093D116E06AEC00B3861A /* Ones And Tens */,
 				1F6093F816E06AEC00B3861A /* Ones And TensTests */,
 				1F6093CA16E06AEC00B3861A /* Frameworks */,
@@ -121,10 +165,13 @@
 			children = (
 				1F6093DA16E06AEC00B3861A /* HetoeAppDelegate.h */,
 				1F6093DB16E06AEC00B3861A /* HetoeAppDelegate.m */,
-				1F6093E316E06AEC00B3861A /* MainStoryboard_iPhone.storyboard */,
 				1F6093E616E06AEC00B3861A /* MainStoryboard_iPad.storyboard */,
+				1F60940916E445F000B3861A /* HetoeGridViewController.h */,
+				1F60940A16E445F000B3861A /* HetoeGridViewController.m */,
 				1F6093E916E06AEC00B3861A /* HetoeViewController.h */,
 				1F6093EA16E06AEC00B3861A /* HetoeViewController.m */,
+				1FA65FAC16E9FC900063BFBB /* HetoeOptionsViewController.h */,
+				1FA65FAD16E9FC900063BFBB /* HetoeOptionsViewController.m */,
 				1F6093D216E06AEC00B3861A /* Supporting Files */,
 			);
 			path = "Ones And Tens";
@@ -133,6 +180,24 @@
 		1F6093D216E06AEC00B3861A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1F60940C16E45C3E00B3861A /* box_blue.png */,
+				1FA65FA216E9E0CB0063BFBB /* sound_box.wav */,
+				1FA65FA316E9E0CB0063BFBB /* sound_error.wav */,
+				1FA65FA416E9E0CB0063BFBB /* sound_switch.wav */,
+				1F60940D16E45C3E00B3861A /* box_blue_disabled.png */,
+				1FA65FA816E9F04A0063BFBB /* ferris_self_portrait.png */,
+				1FA65FA916E9F04A0063BFBB /* ferris_learns_maths.png */,
+				1F60942416E4C98200B3861A /* box_red.png */,
+				1F60940E16E45C3E00B3861A /* box_green.png */,
+				1F60940F16E45C3E00B3861A /* box_white.png */,
+				1F60941016E45C3E00B3861A /* box_white_disabled.png */,
+				1F60941116E45C3E00B3861A /* box_yellow.png */,
+				1F60941216E45C3E00B3861A /* button_equals_active.png */,
+				1F60941316E45C3E00B3861A /* button_equals_inactive.png */,
+				1F60941416E45C3E00B3861A /* button_minus_active.png */,
+				1F60941516E45C3E00B3861A /* button_minus_inactive.png */,
+				1F60941616E45C3E00B3861A /* button_plus_active.png */,
+				1F60941716E45C3E00B3861A /* button_plus_inactive.png */,
 				1F6093D316E06AEC00B3861A /* Ones And Tens-Info.plist */,
 				1F6093D416E06AEC00B3861A /* InfoPlist.strings */,
 				1F6093D716E06AEC00B3861A /* main.m */,
@@ -239,8 +304,25 @@
 				1F6093DE16E06AEC00B3861A /* Default.png in Resources */,
 				1F6093E016E06AEC00B3861A /* Default@2x.png in Resources */,
 				1F6093E216E06AEC00B3861A /* Default-568h@2x.png in Resources */,
-				1F6093E516E06AEC00B3861A /* MainStoryboard_iPhone.storyboard in Resources */,
 				1F6093E816E06AEC00B3861A /* MainStoryboard_iPad.storyboard in Resources */,
+				1F60941816E45C3E00B3861A /* box_blue.png in Resources */,
+				1F60941916E45C3E00B3861A /* box_blue_disabled.png in Resources */,
+				1F60941A16E45C3E00B3861A /* box_green.png in Resources */,
+				1F60941B16E45C3E00B3861A /* box_white.png in Resources */,
+				1F60941C16E45C3E00B3861A /* box_white_disabled.png in Resources */,
+				1F60941D16E45C3E00B3861A /* box_yellow.png in Resources */,
+				1F60941E16E45C3E00B3861A /* button_equals_active.png in Resources */,
+				1F60941F16E45C3E00B3861A /* button_equals_inactive.png in Resources */,
+				1F60942016E45C3E00B3861A /* button_minus_active.png in Resources */,
+				1F60942116E45C3E00B3861A /* button_minus_inactive.png in Resources */,
+				1F60942216E45C3E00B3861A /* button_plus_active.png in Resources */,
+				1F60942316E45C3E00B3861A /* button_plus_inactive.png in Resources */,
+				1F60942516E4C98200B3861A /* box_red.png in Resources */,
+				1FA65FA516E9E0CB0063BFBB /* sound_box.wav in Resources */,
+				1FA65FA616E9E0CB0063BFBB /* sound_error.wav in Resources */,
+				1FA65FA716E9E0CB0063BFBB /* sound_switch.wav in Resources */,
+				1FA65FAA16E9F04A0063BFBB /* ferris_self_portrait.png in Resources */,
+				1FA65FAB16E9F04A0063BFBB /* ferris_learns_maths.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +360,8 @@
 				1F6093D816E06AEC00B3861A /* main.m in Sources */,
 				1F6093DC16E06AEC00B3861A /* HetoeAppDelegate.m in Sources */,
 				1F6093EB16E06AEC00B3861A /* HetoeViewController.m in Sources */,
+				1F60940B16E445F000B3861A /* HetoeGridViewController.m in Sources */,
+				1FA65FAE16E9FC900063BFBB /* HetoeOptionsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,14 +390,6 @@
 				1F6093D516E06AEC00B3861A /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		1F6093E316E06AEC00B3861A /* MainStoryboard_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1F6093E416E06AEC00B3861A /* en */,
-			);
-			name = MainStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
 		1F6093E616E06AEC00B3861A /* MainStoryboard_iPad.storyboard */ = {
@@ -400,6 +476,7 @@
 				GCC_PREFIX_HEADER = "Ones And Tens/Ones And Tens-Prefix.pch";
 				INFOPLIST_FILE = "Ones And Tens/Ones And Tens-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -411,6 +488,7 @@
 				GCC_PREFIX_HEADER = "Ones And Tens/Ones And Tens-Prefix.pch";
 				INFOPLIST_FILE = "Ones And Tens/Ones And Tens-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -468,6 +546,7 @@
 				1F60940516E06AED00B3861A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1F60940616E06AED00B3861A /* Build configuration list for PBXNativeTarget "Ones And TensTests" */ = {
 			isa = XCConfigurationList;
@@ -476,6 +555,7 @@
 				1F60940816E06AED00B3861A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

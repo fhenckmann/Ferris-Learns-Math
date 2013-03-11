@@ -13,6 +13,17 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    NSDictionary *defaultUserDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
+                                         [NSNumber numberWithBool:YES], @"playSpokenInstructions",
+                                         [NSNumber numberWithBool:YES], @"playSounds",
+                                         [NSNumber numberWithBool:YES], @"showOnes",
+                                         [NSNumber numberWithBool:YES], @"showTens",
+                                         [NSNumber numberWithBool:NO], @"hideSubtractions",
+                                         [NSNumber numberWithBool:NO], @"alwaysShowResult",
+                                         nil];
+    [[NSUserDefaults standardUserDefaults] registerDefaults:defaultUserDefaults];
+    
     return YES;
 }
 							
