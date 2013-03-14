@@ -108,14 +108,14 @@ static const float _duration = 0.1f;
 	self.errorSoundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
 	
 	if (self.errorSoundPlayer == nil) {
-		NSLog([error description]);
+		NSLog([NSString stringWithFormat:@"Error loading sound:%@",[error description]]);
     }
     
     url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/sound_switch.wav", [[NSBundle mainBundle] resourcePath]]];
     self.switchSoundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
     
     if (self.switchSoundPlayer == nil) {
-        NSLog([error description]);
+        NSLog([NSString stringWithFormat:@"Error loading sound:%@",[error description]]);
     }
     
     url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/sound_box.wav", [[NSBundle mainBundle] resourcePath]]];
@@ -123,7 +123,7 @@ static const float _duration = 0.1f;
     self.boxSoundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
     
     if (self.boxSoundPlayer == nil) {
-        NSLog([error description]);
+        NSLog([NSString stringWithFormat:@"Error loading sound:%@",[error description]]);
     }
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

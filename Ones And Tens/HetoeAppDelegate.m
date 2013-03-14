@@ -7,12 +7,15 @@
 //
 
 #import "HetoeAppDelegate.h"
+#import "Score.h"
 
 @implementation HetoeAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    NSArray* defaultScores = [Score getDefaultScores];
     
     NSDictionary *defaultUserDefaults = [NSDictionary dictionaryWithObjectsAndKeys:
                                          [NSNumber numberWithBool:YES], @"playSpokenInstructions",
@@ -21,6 +24,7 @@
                                          [NSNumber numberWithBool:YES], @"showTens",
                                          [NSNumber numberWithBool:NO], @"hideSubtractions",
                                          [NSNumber numberWithBool:NO], @"alwaysShowResult",
+                                         defaultScores, @"highScores",
                                          nil];
     [[NSUserDefaults standardUserDefaults] registerDefaults:defaultUserDefaults];
     
