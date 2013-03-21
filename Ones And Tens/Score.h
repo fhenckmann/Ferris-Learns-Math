@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Score : NSObject
+@interface Score : NSObject <NSCoding>
 
 @property (strong, nonatomic) NSString* playerName;
 @property (strong, nonatomic) NSDate* scoreDate;
@@ -16,11 +16,14 @@
 
 - (Score*) initWithName:(NSString*)playerName andScore:(int)score andDate:(NSDate*)date;
 - (BOOL) saveScore;
-- (Score*) getScoreAtPosition:(int)position;
-- (NSArray*) getScores;
++ (Score*) getScoreAtPosition:(int)position;
++ (NSArray*) getScores;
 - (BOOL) isEqualToScore:(Score*)compareScore;
 - (BOOL) isHighScore;
 - (BOOL) isInTopTen;
 + (NSArray*) getDefaultScores;
+
+- (id)initWithCoder:(NSCoder *)decoder;
+- (void)encodeWithCoder:(NSCoder *)encoder;
 
 @end

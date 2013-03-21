@@ -30,6 +30,13 @@
 		1F13C0B916F045DC00C5631A /* sound_wrong_number.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1F13C0B516F045DC00C5631A /* sound_wrong_number.wav */; };
 		1F13C0BB16F086A000C5631A /* button_grey_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F13C0BA16F086A000C5631A /* button_grey_large.png */; };
 		1F13C0BE16F1DE4100C5631A /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F13C0BD16F1DE4100C5631A /* Score.m */; };
+		1F13C0C016FA89FB00C5631A /* background_game.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F13C0BF16FA89FB00C5631A /* background_game.png */; };
+		1F13C0C316FA8EDF00C5631A /* pad_green.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F13C0C116FA8EDF00C5631A /* pad_green.png */; };
+		1F13C0C416FA8EDF00C5631A /* pad_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 1F13C0C216FA8EDF00C5631A /* pad_red.png */; };
+		1F13C0C816FAA43D00C5631A /* sound_even_or_odd.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1F13C0C516FAA43C00C5631A /* sound_even_or_odd.wav */; };
+		1F13C0C916FAA43D00C5631A /* sound_lower_or_greater.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1F13C0C616FAA43D00C5631A /* sound_lower_or_greater.wav */; };
+		1F13C0CA16FAA43D00C5631A /* sound_making_ten.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1F13C0C716FAA43D00C5631A /* sound_making_ten.wav */; };
+		1F13C0CD16FB1B9D00C5631A /* HetoeHighScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F13C0CC16FB1B9D00C5631A /* HetoeHighScoreViewController.m */; };
 		1F6093CC16E06AEC00B3861A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F6093CB16E06AEC00B3861A /* UIKit.framework */; };
 		1F6093CE16E06AEC00B3861A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F6093CD16E06AEC00B3861A /* Foundation.framework */; };
 		1F6093D016E06AEC00B3861A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F6093CF16E06AEC00B3861A /* CoreGraphics.framework */; };
@@ -105,6 +112,14 @@
 		1F13C0BA16F086A000C5631A /* button_grey_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_grey_large.png; sourceTree = "<group>"; };
 		1F13C0BC16F1DE4100C5631A /* Score.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Score.h; sourceTree = "<group>"; };
 		1F13C0BD16F1DE4100C5631A /* Score.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Score.m; sourceTree = "<group>"; };
+		1F13C0BF16FA89FB00C5631A /* background_game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_game.png; sourceTree = "<group>"; };
+		1F13C0C116FA8EDF00C5631A /* pad_green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pad_green.png; sourceTree = "<group>"; };
+		1F13C0C216FA8EDF00C5631A /* pad_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pad_red.png; sourceTree = "<group>"; };
+		1F13C0C516FAA43C00C5631A /* sound_even_or_odd.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_even_or_odd.wav; sourceTree = "<group>"; };
+		1F13C0C616FAA43D00C5631A /* sound_lower_or_greater.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_lower_or_greater.wav; sourceTree = "<group>"; };
+		1F13C0C716FAA43D00C5631A /* sound_making_ten.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound_making_ten.wav; sourceTree = "<group>"; };
+		1F13C0CB16FB1B9C00C5631A /* HetoeHighScoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HetoeHighScoreViewController.h; sourceTree = "<group>"; };
+		1F13C0CC16FB1B9D00C5631A /* HetoeHighScoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HetoeHighScoreViewController.m; sourceTree = "<group>"; };
 		1F6093C816E06AEC00B3861A /* Ones And Tens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ones And Tens.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F6093CB16E06AEC00B3861A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1F6093CD16E06AEC00B3861A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -214,10 +229,11 @@
 				1F6093DA16E06AEC00B3861A /* HetoeAppDelegate.h */,
 				1F6093DB16E06AEC00B3861A /* HetoeAppDelegate.m */,
 				1F6093E616E06AEC00B3861A /* MainStoryboard_iPad.storyboard */,
+				1F13C0CB16FB1B9C00C5631A /* HetoeHighScoreViewController.h */,
+				1F13C0CC16FB1B9D00C5631A /* HetoeHighScoreViewController.m */,
 				1F13C0B016EF46CE00C5631A /* background.png */,
 				1F13C0AB16EDD30F00C5631A /* HetoeMaking10sViewController.h */,
 				1F13C0AC16EDD30F00C5631A /* HetoeMaking10sViewController.m */,
-				1F13C0BA16F086A000C5631A /* button_grey_large.png */,
 				1F60940916E445F000B3861A /* HetoeGridViewController.h */,
 				1F60940A16E445F000B3861A /* HetoeGridViewController.m */,
 				1F6093E916E06AEC00B3861A /* HetoeViewController.h */,
@@ -234,6 +250,13 @@
 		1F6093D216E06AEC00B3861A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1F13C0C516FAA43C00C5631A /* sound_even_or_odd.wav */,
+				1F13C0C616FAA43D00C5631A /* sound_lower_or_greater.wav */,
+				1F13C0C716FAA43D00C5631A /* sound_making_ten.wav */,
+				1F13C0C116FA8EDF00C5631A /* pad_green.png */,
+				1F13C0C216FA8EDF00C5631A /* pad_red.png */,
+				1F13C0BF16FA89FB00C5631A /* background_game.png */,
+				1F13C0BA16F086A000C5631A /* button_grey_large.png */,
 				1F60940C16E45C3E00B3861A /* box_blue.png */,
 				1F60940D16E45C3E00B3861A /* box_blue_disabled.png */,
 				1F13C08F16EDABF000C5631A /* box_blue_subtract.png */,
@@ -417,6 +440,12 @@
 				1F13C0B816F045DC00C5631A /* sound_single_tick.wav in Resources */,
 				1F13C0B916F045DC00C5631A /* sound_wrong_number.wav in Resources */,
 				1F13C0BB16F086A000C5631A /* button_grey_large.png in Resources */,
+				1F13C0C016FA89FB00C5631A /* background_game.png in Resources */,
+				1F13C0C316FA8EDF00C5631A /* pad_green.png in Resources */,
+				1F13C0C416FA8EDF00C5631A /* pad_red.png in Resources */,
+				1F13C0C816FAA43D00C5631A /* sound_even_or_odd.wav in Resources */,
+				1F13C0C916FAA43D00C5631A /* sound_lower_or_greater.wav in Resources */,
+				1F13C0CA16FAA43D00C5631A /* sound_making_ten.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,6 +487,7 @@
 				1FA65FAE16E9FC900063BFBB /* HetoeOptionsViewController.m in Sources */,
 				1F13C0AD16EDD30F00C5631A /* HetoeMaking10sViewController.m in Sources */,
 				1F13C0BE16F1DE4100C5631A /* Score.m in Sources */,
+				1F13C0CD16FB1B9D00C5631A /* HetoeHighScoreViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
