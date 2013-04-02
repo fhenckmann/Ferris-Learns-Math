@@ -63,6 +63,7 @@
 - (void) prepareMakingTensGame;
 - (void) scrollInHeaderLabelForGame:(NSInteger)game;
 - (void) showInstructionsForLevel:(int)level;
+- (void) generateNextGame:(NSTimer*)timer;
 
 @end
 
@@ -226,6 +227,139 @@ static const NSInteger _GAME_LESS_THAN_OR_GREATER_THAN = 3;
 
 #pragma mark GAME PLAY
 
+- (IBAction)selectNextGame
+{
+    
+    //hide go button
+    [self.goButton setHidden:YES];
+    
+    
+    //choose what game to play
+    NSInteger randomNumber = (arc4random_uniform(10));
+    int nextGame = _level_x_games[_level-1][randomNumber];
+    
+    //scroll in game header
+    [self scrollInHeaderLabelForGame:nextGame];
+    
+    //wait 2 secs and then generate the game
+    
+    NSDictionary* userInfo = [NSDictionary dictionaryWithObject:[NSNumber numberWithInt:nextGame] forKey:@"gameType"];
+    [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(generateNextGame:) userInfo:userInfo repeats:NO];
+
+    
+}
+
+- (void) generateNextGame:(NSTimer*) timer
+{
+    
+    NSDictionary* userInfo = [timer userInfo];
+    int gameType = [[userInfo objectForKey:@"gameType"] intValue];
+    
+    switch (gameType) {
+            
+        case _GAME_MAKING_TENS: {
+            
+            [self showMakingTensContent:YES];
+            [self showEvenOrOddGame:NO];
+            [self showLessOrGreaterThanGame:NO];
+            [self initializeMakingTensForLevel:_level];
+            
+            break;
+        }
+            
+        case _GAME_EVEN_OR_ODD:
+            
+            [self showMakingTensContent:NO];
+            [self showEvenOrOddGame:YES];
+            [self showLessOrGreaterThanGame:NO];
+            [self initializeEvenOrOddForLevel:_level];
+            break;
+            
+            
+        case _GAME_LESS_THAN_OR_GREATER_THAN:
+            
+            [self showMakingTensContent:NO];
+            [self showEvenOrOddGame:NO];
+            [self showLessOrGreaterThanGame:YES];
+            [self initializeLowerThanOrGreaterThanForLevel:_level];
+            break;
+            
+            
+    }
+    
+    //set the bonus
+    [[self bonusLabel] setText:[NSString stringWithFormat:@"%d", _bonusPoints]];
+    
+    //start timer
+    [self startTimer];
+    
+    
+}
+
+
+
+- (void) scrollInHeaderLabelForGame:(NSInteger)game
+{
+    
+    NSString* titleText;
+    
+    switch (game) {
+            
+        case _GAME_MAKING_TENS:
+            
+            titleText = @"Making Ten";
+            [self.makingTenPlayer play];
+            
+            break;
+            
+        case _GAME_EVEN_OR_ODD:
+            
+            titleText = @"Even Or Odd";
+            [self.evenOrOddPlayer play];
+            
+            break;
+            
+        case _GAME_LESS_THAN_OR_GREATER_THAN:
+            
+            titleText = @"Less Than Or Greater Than";
+            [self.lowerOrGreaterPlayer play];
+            
+            break;
+            
+    }
+    
+    [self.titleLabel setText:titleText];
+    
+    [self.titleLabel setCenter:CGPointMake(-384, self.titleLabel.center.y)];
+    
+    [UIView animateWithDuration:1.0 animations:^{
+		self.titleLabel.center = CGPointMake(384, self.titleLabel.center.y);
+	}];
+    
+}
+
+- (void) showInstructionsForLevel:(int)level
+{
+    
+    [self showMakingTensContent:NO];
+    [self showEvenOrOddGame:NO];
+    [self showLessOrGreaterThanGame:NO];
+    [self.goButton setHidden:YES];
+    
+    [self.titleLabel setText:@"Instructions"];
+    
+    [self.instructionLabelHeader setText:[NSString stringWithFormat:@"Level %d", level]];
+    [self.instructionLabelHeader setHidden:NO];
+    
+    [self.instructionLabelText setText:(NSString*)[_instructionText objectAtIndex:level-1]];
+    [self.instructionLabelText setHidden:NO];
+    
+    [self.instructionOKButton setHidden:NO];
+    
+}
+
+
+
 /*
 
  MAKING TENS
@@ -259,7 +393,7 @@ static const NSInteger _GAME_LESS_THAN_OR_GREATER_THAN = 3;
         UIButton* label = [UIButton buttonWithType:UIButtonTypeCustom];
         label.frame = CGRectMake(32.0 + (80 * i), 428.0, 68.0, 68.0);
         [label setBackgroundImage:[UIImage imageNamed:@"circle_white.png"] forState:UIControlStateDisabled];
-        [label setBackgroundImage:[UIImage imageNamed:@"circle_green.png"] forState:UIControlStateSelected];
+        [label setBackgroundImage:[UIImage imageNamed:@"circle_green.png"] forState:UIControlStateSelected | UIControlStateDisabled];
         label.tag = 11 + i;
         
         [label setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -277,6 +411,7 @@ static const NSInteger _GAME_LESS_THAN_OR_GREATER_THAN = 3;
 {
     NSInteger inputSet[10];
     NSInteger offerSet[10];
+    int randomNumber;
     
     //initialize both sets with basic ascending numbers
     
@@ -290,22 +425,28 @@ static const NSInteger _GAME_LESS_THAN_OR_GREATER_THAN = 3;
     
     switch (level) {
             
-        case 1:
-            
-            //leave input and offer sets as they are, set result to 10
-            
+        case 1: //leave input and offer sets as they are, set result to 10
+                        
             _result = 10;
             _bonusPoints = 5000;
             
+            //determine a random number to be selected from bottom row
+            randomNumber = (arc4random_uniform(9) + 1);
+            NSLog(@"The ball number pulled out of the hat today is %d", randomNumber);
+            
+            _number2 = offerSet[randomNumber-1];
+            
+            NSLog(@"And the number on that ball is %d", _number2);
+            _number1 = _result - _number2;
+            
             break;
             
-        case 2:
-            
-            //both input and offer sets range from 1 to 10, but in arbitrary order. Result is always 10
-            
-            for (NSUInteger i = 0; i < 10; ++i) {
+        case 2: //both input and offer sets range from 1 to 10, but in arbitrary order. Result is always 10
+                        
+            //shake up both input and offer sets
+            for (NSUInteger i = 0; i < 9; ++i) {
                 // Select a random element between i and end of array to swap with.
-                NSInteger nElements = 10 - i;
+                NSInteger nElements = 9 - i;
                 NSInteger n1 = (arc4random_uniform(nElements) + i);
                 NSInteger n2 = (arc4random_uniform(nElements) + i);
                 NSInteger temp1 = inputSet[i];
@@ -319,11 +460,72 @@ static const NSInteger _GAME_LESS_THAN_OR_GREATER_THAN = 3;
             
             _result = 10;
             _bonusPoints = 10000;
+            
+            //determine a random number to be selected from bottom row
+            randomNumber = (arc4random_uniform(9) + 1);
+            NSLog(@"The ball number pulled out of the hat today is %d", randomNumber);
+            
+            _number2 = offerSet[randomNumber-1];
+            
+            NSLog(@"And the number on that ball is %d", _number2);
+            _number1 = _result - _number2;
             break;
             
-        case 3:
+        case 3: //input set contains various numbers, _result can be 10, 20, 30, 40...
             
-            //offer set contains various numbers, _result can be 10, 20, 30, 40...
+            //shake up offer set
+            for (NSUInteger i = 0; i < 9; ++i) {
+                // Select a random element between i and end of array to swap with.
+                NSInteger nElements = 9 - i;
+                NSInteger n = (arc4random_uniform(nElements) + i);
+                NSInteger temp= offerSet[i];
+                offerSet[i] = offerSet[n];
+                offerSet[n] = temp;
+            }
+            
+            //determine result
+            _result = (arc4random_uniform(9) + 1) * 10;
+            
+            //determine a random number to be selected from bottom row
+            randomNumber = (arc4random_uniform(9) + 1);
+            NSLog(@"The ball number pulled out of the hat today is %d", randomNumber);
+            
+            _number2 = offerSet[randomNumber-1];
+            NSLog(@"And the number on that ball is %d", _number2);
+            
+            _number1 = _result - _number2;
+            
+            //create input set
+            inputSet[0] = _number1; //this is the correct result
+            
+            if (_number1 < 90) {
+                inputSet[1] = _number1 + 10;
+            } else {
+                inputSet[1] = _number1 - 20;
+            }
+            
+            if (_number1 > 10) {
+                inputSet[2] = _number1 - 10;
+            } else {
+                inputSet[2] = _number1 + 20;
+            }
+            
+            inputSet[3] = _number1 + 1;
+            inputSet[4] = _number1 - 1;
+            inputSet[5] = inputSet[1] + 1;
+            inputSet[6] = inputSet[2] - 1;
+            inputSet[7] = (arc4random_uniform(99) + 1);
+            inputSet[8] = (arc4random_uniform(99) + 1);
+            
+            //shake up inputSet
+            for (NSUInteger i = 0; i < 9; ++i) {
+                // Select a random element between i and end of array to swap with.
+                NSInteger nElements = 9 - i;
+                NSInteger n = (arc4random_uniform(nElements) + i);
+                NSInteger temp = inputSet[i];
+                inputSet[i] = inputSet[n];
+                inputSet[n] = temp;
+            }
             
             break;
             
@@ -335,18 +537,12 @@ static const NSInteger _GAME_LESS_THAN_OR_GREATER_THAN = 3;
             
     }
     
-    //determine a random number to be selected from bottom row
-    int randomNumber = (arc4random_uniform(9) + 1);
-    NSLog(@"The ball number pulled out of the hat today is %d", randomNumber);
+
     
-    _number2 = offerSet[randomNumber-1];
     
-    NSLog(@"And the number on that ball is %d", _number2);
-    _number1 = _result - _number2;
-    
+//create button visualisations
     
     for (NSInteger i = 0; i < 9; i++) {
-        
         
     //create buttons for top row
         UIButton* button = (UIButton*)[[self view] viewWithTag:i+1];
@@ -437,119 +633,6 @@ static const NSInteger _GAME_LESS_THAN_OR_GREATER_THAN = 3;
 }
 
 
-- (IBAction) generateNextGame
-{
-    //hide go button
-    [self.goButton setHidden:YES];
-    
-    
-    //choose what game to play
-    NSInteger randomNumber = (arc4random_uniform(10));
-    
-    
-    switch (_level_x_games[_level-1][randomNumber]) {
-        
-        case _GAME_MAKING_TENS: {
-            
-            [self showMakingTensContent:YES];
-            [self showEvenOrOddGame:NO];
-            [self showLessOrGreaterThanGame:NO];
-            [self scrollInHeaderLabelForGame:_GAME_MAKING_TENS];
-            [self initializeMakingTensForLevel:_level];
-        
-            break;
-        }
-            
-        case _GAME_EVEN_OR_ODD:
-            
-            [self showMakingTensContent:NO];
-            [self showEvenOrOddGame:YES];
-            [self showLessOrGreaterThanGame:NO];
-            [self scrollInHeaderLabelForGame:_GAME_EVEN_OR_ODD];
-            [self initializeEvenOrOddForLevel:_level];
-            break;
-            
-    
-        case _GAME_LESS_THAN_OR_GREATER_THAN:
-            
-            [self showMakingTensContent:NO];
-            [self showEvenOrOddGame:NO];
-            [self showLessOrGreaterThanGame:YES];
-            [self scrollInHeaderLabelForGame:_GAME_LESS_THAN_OR_GREATER_THAN];
-            [self initializeLowerThanOrGreaterThanForLevel:_level];
-            break;
-            
-        
-    }
-    
-    //set the bonus
-    [[self bonusLabel] setText:[NSString stringWithFormat:@"%d", _bonusPoints]];
-    
-    //wait 3 seconds, then start timer
-    [NSTimer scheduledTimerWithTimeInterval:1.5 target:self selector:@selector(startTimer:) userInfo:nil repeats:NO];
-    
-}
-
-- (void) scrollInHeaderLabelForGame:(NSInteger)game
-{
-    
-    NSString* titleText;
-    
-    switch (game) {
-            
-        case _GAME_MAKING_TENS:
-            
-            titleText = @"Making Ten";
-            [self.makingTenPlayer play];
-            
-            break;
-            
-        case _GAME_EVEN_OR_ODD:
-            
-            titleText = @"Even Or Odd";
-            [self.evenOrOddPlayer play];
-            
-            break;
-            
-        case _GAME_LESS_THAN_OR_GREATER_THAN:
-            
-            titleText = @"Less Than Or Greater Than";
-            [self.lowerOrGreaterPlayer play];
-            
-            break;
-            
-    }
-    
-    [self.titleLabel setText:titleText];
-    
-    [self.titleLabel setCenter:CGPointMake(-384, self.titleLabel.center.y)];
-    
-    [UIView animateWithDuration:1.0 animations:^{
-		self.titleLabel.center = CGPointMake(384, self.titleLabel.center.y);
-	}];
-    
-}
-
-- (void) showInstructionsForLevel:(int)level
-{
-    
-    [self showMakingTensContent:NO];
-    [self showEvenOrOddGame:NO];
-    [self showLessOrGreaterThanGame:NO];
-    [self.goButton setHidden:YES];
-    
-    [self.titleLabel setText:@"Instructions"];
-    
-    [self.instructionLabelHeader setText:[NSString stringWithFormat:@"Level %d", level]];
-    [self.instructionLabelHeader setHidden:NO];
-    
-    [self.instructionLabelText setText:(NSString*)[_instructionText objectAtIndex:level-1]];
-    [self.instructionLabelText setHidden:NO];
-    
-    [self.instructionOKButton setHidden:NO];    
-    
-}
-
 
 - (void) pressNumberButton:(id)sender
 {
@@ -594,12 +677,16 @@ static const NSInteger _GAME_LESS_THAN_OR_GREATER_THAN = 3;
             }
             
             _score -= _bonusPoints;
-            if (_score < 0) _score = 0;
             _bonusPoints = 0;
             [self.scoreLabel setText:[NSString stringWithFormat:@"%d", _score]];
             [self.bonusLabel setText:[NSString stringWithFormat:@"%d", _bonusPoints]];
-            [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(getReadyForNextRound) userInfo:nil repeats:NO];
             
+            if (_score < 0) {
+                _score = 0;
+                [self gameOver];
+            } else {
+                [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(getReadyForNextRound) userInfo:nil repeats:NO];
+            }
         }
         
     } else {
@@ -618,7 +705,7 @@ static const NSInteger _GAME_LESS_THAN_OR_GREATER_THAN = 3;
 #pragma mark Timer & Bonus Functions
 
 
-- (IBAction)startTimer:(id)sender {
+- (void)startTimer {
     
     //activate the buttons
     _buttonsActive = YES;
@@ -745,9 +832,25 @@ static const NSInteger _GAME_LESS_THAN_OR_GREATER_THAN = 3;
     [self showMakingTensContent:NO];
     [self showEvenOrOddGame:NO];
     [self showLessOrGreaterThanGame:NO];
-    [self.goButton setHidden:NO];
-    _buttonsActive = NO;
-    _barTimerFrequency = _barTimerFrequency * 0.8;
+    
+    if (_roundsLeftInLevel > 0) {
+        
+        [self.goButton setHidden:NO];
+        _buttonsActive = NO;
+        _barTimerFrequency = _barTimerFrequency * 0.8;
+        
+        
+    } else {
+        
+        //new level reached
+        _level++;
+        _barTimerFrequency = 0.25;
+        _roundsLeftInLevel = 100.0;
+        [self showInstructionsForLevel:_level];
+        
+    }
+    
+
     
 }
 

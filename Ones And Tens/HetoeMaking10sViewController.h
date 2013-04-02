@@ -31,8 +31,7 @@
 @property (nonatomic, retain) AVAudioPlayer *evenOrOddPlayer;
 @property (nonatomic, retain) AVAudioPlayer *lowerOrGreaterPlayer;
 
-- (IBAction)startTimer:(id)sender;
-- (IBAction)generateNextGame;
+- (IBAction)selectNextGame;
 - (IBAction)pressEvenButton:(id)sender;
 - (IBAction)pressOddButton:(id)sender;
 
